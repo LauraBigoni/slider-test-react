@@ -1,1 +1,60 @@
-.SliderPage {}
+// CARDS
+.slider-cards {
+  overflow: hidden;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.slider-cards > .active {
+  transform: scale(1.1);
+  opacity: 1 !important;
+}
+
+// ARROWS
+i.fa-arrow-left {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  cursor: pointer;
+}
+
+i.fa-arrow-left:not(.transition-none):hover {
+  transform: translateX(-10px);
+}
+
+i.fa-arrow-right {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  cursor: pointer;
+}
+
+i.fa-arrow-right:not(.transition-none):hover {
+  transform: translateX(10px);
+}
+
+// DOTS
+.dots {
+  padding-top: 50px;
+}
+i {
+  cursor: pointer;
+  color: #b3b3b39d;
+}
+i.active {
+  color: #fff;
+  transform: scale(1.2);
+  transition: transform 0.5s;
+}
+
+i:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s;
+}
+
+i:active {
+  transform: scale(0.8);
+  transition: transform 0.5s;
+}
