@@ -4,11 +4,12 @@ import { BsArrowLeft } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 
-const NavigationElements = () => (
-  <div className={styles.NavigationElements}>
-    <div className="navigation-slider basis-basis-1/5">
-      <BsArrowLeft
-        className="
+function NavigationElements() {
+  return (
+    <div className={styles.NavigationElements}>
+      <div className="navigation-slider basis-basis-1/5">
+        <BsArrowLeft
+          className="
               invisible
               lg:visible
               prev
@@ -17,9 +18,9 @@ const NavigationElements = () => (
               mix-blend-difference
               text-gray-100 absolute top-50 top-1/2 left-16 text-4xl hover:scale-125
             "
-      />
-      <BsArrowRight
-        className="
+        />
+        <BsArrowRight
+          className="
               invisible
               lg:visible
               next
@@ -28,9 +29,9 @@ const NavigationElements = () => (
               mix-blend-difference
               text-gray-100 absolute top-50 top-1/2 right-16 text-4xl hover:scale-125
             "
-      />
-      <div
-        className="
+        />
+        <div
+          className="
               dots
               flex
               justify-center
@@ -40,17 +41,14 @@ const NavigationElements = () => (
               mix-blend-difference
               text-gray-100
             "
-      >
-        <GoPrimitiveDot />
-        <GoPrimitiveDot />
-        <GoPrimitiveDot />
+        >
+          <GoPrimitiveDot />
+          <GoPrimitiveDot />
+          <GoPrimitiveDot />
+        </div>
       </div>
     </div>
-  </div>
-);
-
-NavigationElements.propTypes = {};
-
-NavigationElements.defaultProps = {};
+  );
+}
 
 export default NavigationElements;
