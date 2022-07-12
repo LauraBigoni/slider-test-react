@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SliderCard.css";
 
 const SliderCard = () => (
-  <div className={SliderCard}>
+  <div className={styles.SliderCard}>
     <div
       className="
 			p-6 mx-10

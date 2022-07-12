@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./InputElements.css";
 
 const InputElements = () => (
-  <div className={InputElements}>
+  <div className={styles.InputElements}>
     <div
       className="
 			input-container
@@ -35,6 +35,7 @@ const InputElements = () => (
           name="cards-range"
           id="cards-range"
           className="mx-3"
+          onInput={this.handleValue}
         />
 
         <output>3</output>
@@ -55,7 +56,11 @@ const InputElements = () => (
   </div>
 );
 
-InputElements.propTypes = {};
+InputElements.propTypes = {
+  handleValue(event) {
+    this.setState({ value: event.target.value });
+  },
+};
 
 InputElements.defaultProps = {};
 
