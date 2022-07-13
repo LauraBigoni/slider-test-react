@@ -1,9 +1,17 @@
 import React from "react";
 
-function InputElements(props) {
-  return (
-    <div
-      className="
+class InputElements extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    console.log(props.props.bgColor);
+  }
+  render() {
+    const bgColor = this.props.props.bgColor;
+    const handleBgChange = this.props.handleBgChange;
+    return (
+      <div
+        className="
 			input-container
 			flex
 			justify-end
@@ -13,9 +21,9 @@ function InputElements(props) {
 			md:flex-row
 			items-center
 		"
-    >
-      <div
-        className="
+      >
+        <div
+          className="
 				mix-blend-difference
 				text-gray-100
 				flex
@@ -24,37 +32,37 @@ function InputElements(props) {
 				md:py-3
 				py-5
 			"
-      >
-        <label>Number of cards:</label>
-        <input
-          type="range"
-          min="0"
-          max="42"
-          step="1"
-          name="cards-range"
-          id="cards-range"
-          className="mx-3"
-          value={props.value}
-          onChange={props.handleValueChange}
-        />
+        >
+          <label>Number of cards:</label>
+          <input
+            type="range"
+            min="0"
+            max="42"
+            step="1"
+            name="cards-range"
+            id="cards-range"
+            className="mx-3"
+            value={this.props.value}
+            onChange={this.props.handleValueChange}
+          />
 
-        <output>{props.value}</output>
-      </div>
+          <output>{this.props.value}</output>
+        </div>
 
-      <div className="flex items-center basis-1/2 md:py-3">
-        <label className="pr-4 mix-blend-difference text-gray-100">
-          Background color:
-        </label>
-        <input
-          type="color"
-          name="color-picker"
-          id="color-picker"
-          value={props.bgColor}
-          onInput={props.handleBgChange}
-        />
+        <div className="flex items-center basis-1/2 md:py-3">
+          <label className="pr-4 mix-blend-difference text-gray-100">
+            Background color:
+          </label>
+          <input
+            type="color"
+            name="color-picker"
+            id="color-picker"
+            value={bgColor}
+            onChange={handleBgChange}
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
 export default InputElements;

@@ -8,18 +8,13 @@ class SliderPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleValueChange = this.handleValueChange.bind(this);
-    this.handleBgChange = this.handleBgChange.bind(this);
     this.state = {
-      bgColor: "#F4EAE1",
       value: 3,
     };
   }
   handleValueChange(e) {
     this.setState({ value: e.target.value });
     console.log(this.state.value);
-  }
-  handleBgChange(e) {
-    this.setState({ bgColor: e.target.value });
   }
   render() {
     return (
@@ -50,8 +45,7 @@ class SliderPage extends React.Component {
             <InputElements
               value={this.state.value}
               handleValueChange={this.handleValueChange}
-              bgColor={this.state.bgColor}
-              handleBgChange={this.handleBgChange}
+              props={this.props}
             />
           </div>
           <div className="flex justify-center basis-3/5">
@@ -66,7 +60,6 @@ class SliderPage extends React.Component {
                     />
                   );
                 }
-                console.log(cards);
                 return cards;
               })()}
             </div>
