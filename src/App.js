@@ -3,7 +3,7 @@ import SliderPage from "./components/SliderPage/SliderPage";
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <SliderPage />
     </div>
   );

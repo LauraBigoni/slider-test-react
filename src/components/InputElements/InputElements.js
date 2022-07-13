@@ -1,15 +1,35 @@
 import React from "react";
-import styles from "./InputElements.css";
+import { Component } from "react";
 
-function InputElements() {
-  const handleValue = (e) => {
-    console.log("Value", e.target.value);
-  };
-  const bgChange = () => {
-    console.log("BgChange");
-  };
-  return (
-    <div className={styles.InputElements}>
+class InputElements extends Component {
+  constructor(props) {
+    super(props);
+    this.handleValue = this.handleValue.bind(this);
+    this.handleBackground = this.handleBackground.bind(this);
+    this.state = {
+      bgColor: "#FFFFFF",
+      value: 3,
+    };
+  }
+
+  handleValue(e) {
+    console.log(this);
+    this.setState({
+      value: e.target.value,
+    });
+    console.log(this.state.value);
+  }
+  handleBackground(e) {
+    this.setState({
+      bgColor: e.target.value,
+    });
+    console.log(this.state.bgColor);
+  }
+
+  render() {
+    const value = this.state.value;
+    const bgColor = this.state.bgColor;
+    return (
       <div
         className="
 			input-container
@@ -42,12 +62,11 @@ function InputElements() {
             name="cards-range"
             id="cards-range"
             className="mx-3"
-            onInput={(e) => {
-              handleValue(e);
-            }}
+            value={value}
+            onInput={this.handleValue}
           />
 
-          <output>3</output>
+          <output>{this.state.value}</output>
         </div>
 
         <div className="flex items-center basis-1/2 md:py-3">
@@ -58,13 +77,13 @@ function InputElements() {
             type="color"
             name="color-picker"
             id="color-picker"
-            value="#F4EAE1"
-            onInput={bgChange}
+            value={bgColor}
+            onInput={this.handleBackground}
           />
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default InputElements;
